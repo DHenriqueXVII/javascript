@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <div id="caixa-nacionalidade">
+        <h1>Nacionalidade</h1>
+        
+        <label for="pais">País onde nasceu</label>
+        <input type="text" name="pais" id="pais">
+        <input type="button" value="Verificar" id="verificar">
+
+        <div id="nacionalidade"></div>
+    </div>
+
+    <script>
+        var botao_verificar = document.querySelector('#verificar')
+        botao_verificar.addEventListener('click', verificar)
+
+        function verificar() {
+            var pais = document.querySelector('#pais').value
+            var nacionalidade = document.querySelector('#nacionalidade')
+
+            if (pais.toLowerCase() == 'brasil') {
+                nacionalidade.innerHTML = `<p>Você é <strong>brasileiro</strong></p>`
+            } else {
+                nacionalidade.innerHTML = `<p>Você é <strong>estrangeiro</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

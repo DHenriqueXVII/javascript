@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de trânsito</title>
+</head>
+<body>
+    <div id="caixa-radar">
+        <h1>Radar de trânsito</h1>
+
+        <label for="velocidade">Velocidade do carro</label>
+        <input type="number" name="velocidade" id="velocidade">
+        <input type="button" value="Verificar" id="verificar">
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        var button_verificar = document.querySelector('#verificar').addEventListener('click', verificar)
+
+        function verificar() {
+            var velocidade = Number(document.querySelector('#velocidade').value)
+            var resultado = document.querySelector('#resultado')
+            resultado.innerHTML = `<p>Sua velocidade atual é de ${velocidade}km/h</p>`
+
+            if (velocidade > 80) {
+                resultado.innerHTML += `<p>Você ultrapassou o limite de velocidade. <strong>MULTADO!</strong></p>`
+            }
+
+            resultado.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>

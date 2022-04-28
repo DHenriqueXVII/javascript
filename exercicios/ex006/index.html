@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        #area {
+            font: bold 2em Arial, Helvetica, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: darkolivegreen;
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <!--Dá para chamar a function pela tag usando por exemplo: onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"-->
+
+    <div id="area">
+        interaja...
+    </div>
+
+    <script>
+        var ação = document.querySelector('#area')
+
+        ação.addEventListener('click', clicar)
+        ação.addEventListener('mouseenter', entrar)
+        ação.addEventListener('mouseout', sair)
+
+        function clicar() {
+            ação.innerText = 'Clicou!'
+            ação.style.backgroundColor = 'orange'
+        }
+        
+        function entrar() {
+            ação.innerText = 'Entrou!'
+            ação.style.backgroundColor = 'blue'
+        }
+
+        function sair() {
+            ação.innerText = 'Saiu'
+            ação.style.backgroundColor = 'red'
+        }
+    </script>
+</body>
+</html>
